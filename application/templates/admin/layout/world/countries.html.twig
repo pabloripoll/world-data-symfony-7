@@ -1,0 +1,117 @@
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1><i class="fas fa-flag"></i> World Countries</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item">
+                        <a href="/admin/world">World</a>
+                    </li>
+                    <li class="breadcrumb-item active">List of Countries</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"><b>Countries</b></h3>
+                        <div class="card-tools">
+                            <ul class="pagination pagination-sm float-right">
+                                <li class="page-item"><a class="page-link" href="#">«</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">»</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table">
+                            <thead>
+                                <tr align="center">
+                                    <th width="5%" style="text-align:left">#</th>
+                                    <th width="35%" style="text-align:left">Name</th>
+                                    <th width="10%">Properties</th>
+                                    <th width="20%">Created</th>
+                                    <th width="20%">Last update</th>
+                                    <th width="10%">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% if countries is empty %}
+                                    <tr align="center">
+                                        <td colspan="6">
+                                            (no country registered)
+                                        </td>
+                                    </tr>
+                                {% else %}
+                                    {% for country in countries %}
+                                        <tr data-widget="expandable-table" aria-expanded="true">
+                                            <td align="left">{{ country.id }}</td>
+                                            <td align="left">
+                                                <a
+                                                    href="/admin/world/countries/profile?id={{ country.id }}"
+                                                    title="Watch country properties"
+                                                    data-target="country-name-{{ country.id }}">
+                                                    {{ country.name }}
+                                                </a>
+                                            </td>
+                                            <td align="center">{{ country.properties }}</td>
+                                            <td align="center">{{ country.created_at }}</td>
+                                            <td align="center">{{ country.updated_at }}</td>
+                                            <td align="center">
+                                                <a href="/admin/world/countries/update?id={{ country.id }}" class="btn btn-xs btn-primary" title="Edit country">
+                                                    <i class="fas fa-edit mx-2"></i>
+                                                </a>
+                                                <button
+                                                    id="delete-button-{{ country.id }}"
+                                                    onclick="removeRegister({{ country.id }})"
+                                                    class="btn btn-xs btn-danger"
+                                                    title="Delete country from registers">
+                                                    <i class="far fa-trash-alt mx-2"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer clearfix">
+                        <ul class="pagination pagination-sm m-0 float-right">
+                            <li class="page-item"><a class="page-link" href="#">«</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">»</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Actions</h3>
+                    </div>
+                    <div class="card-body">
+                        <a href="/admin/world/countries/create" class="btn btn-block btn-default">New Country</a>
+                    </div>
+                    <div class="card-footer">
+
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.row -->
+
+    </div><!-- /.container-fluid -->
+</section>

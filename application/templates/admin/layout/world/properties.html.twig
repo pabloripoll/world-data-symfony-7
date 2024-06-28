@@ -1,0 +1,104 @@
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1><i class="fas fa-sitemap"></i> World Countries - Properties</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item">
+                        <a href="/admin/world">World</a>
+                    </li>
+                    <li class="breadcrumb-item active">Properties</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <b>Property</b>
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="property-name">Name</label>
+                                    <div class="input-group">
+                                        <input
+                                            type="text"
+                                            id="property-name"
+                                            class="form-control"
+                                            placeholder="Enter the name of the property">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="form-group">
+                                    <label for="property-content">JSON Content</label>
+                                    <div class="input-group">
+                                        <input
+                                            type="text"
+                                            id="property-content"
+                                            class="form-control"
+                                            placeholder="Leave empty to fill, insert a constant value or create array of properties like ['someSubPropertyName':'']">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="property-insert-button">&nbsp;</label>
+                                    <div class="input-group">
+                                        <button id="property-insert-button" class="btn btn-block btn-warning">Insert <i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span>Configure the main property to use for country info.</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <b>Registered Properties</b>
+                        </h3>
+                        <div class="card-tools">
+                            <button id="save-changes-button" class="btn btn-block btn-primary">Save Changes</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th width="10%">#</th>
+                                    <th width="30%">Property</th>
+                                    <th width="50%">Content</th>
+                                    <th width="10%" style="text-align:center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="properties-table">
+                                <tr align="center">
+                                    <td colspan="4">
+                                        (no property has been recorded)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div><!-- /.col-md-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+<input type="hidden" id="database-list" value="{{ properties }}">

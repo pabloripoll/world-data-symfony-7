@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content="{{ csrf_token('authenticate') }}" />
+    <title>AdminPR Access</title>
+    <link rel="stylesheet" href="/theme/adminlte/fonts/google-fonts.css">
+    <link rel="stylesheet" href="/theme/adminlte/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="/theme/adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="/theme/adminlte/dist/css/adminlte.css">
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="card card-outline card-primary">
+            <div class="card-header text-center">
+                <a href="/admin/access" class="h1">Admin<b>PR</b></a>
+            </div>
+            <div class="card-body">
+                <p class="login-box-msg">Sign in to start your session</p>
+                <form>
+                    <div class="input-group mb-3">
+                        <input type="email" name="username" class="form-control" placeholder="Username" />
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="password" name="password" class="form-control" placeholder="Password" />
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="login-status" class="col-12"></div>
+                        <div class="col-8"></div>
+                        <div class="col-4">
+                            <button type="submit" id="submit-button" class="btn btn-primary btn-block">SIGN IN</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <script src="/theme/adminlte/plugins/jquery/jquery.min.js"></script>
+    <script src="/theme/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/theme/adminlte/dist/js/adminlte.js"></script>
+    <script src="/theme/admin/login.js?v={{ random(10000, 100000) }}"></script>
+  </body>
+</html>

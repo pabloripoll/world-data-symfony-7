@@ -1,0 +1,21 @@
+{{ include('/admin/shared/head.html.twig') }}
+
+{{ include('/admin/shared/header.html.twig') }}
+
+{{ include('/admin/shared/sidebar.html.twig') }}
+
+<div class="content-wrapper">
+{% if layout is defined %}
+
+    {{ include( layout ) }}
+
+{% else %}
+
+    {{ include('admin/404.html.twig') }}
+
+{% endif %}
+</div>
+
+{{ include('/admin/shared/footer.html.twig') }}
+
+{# include('admin.' . layout ) #}

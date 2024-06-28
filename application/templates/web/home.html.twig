@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+ {% block title %}
+     <title>Home</title>
+ {% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block body %}
+    <h1>Home</h1>
+
+    <a href="/admin">Admin PR</a>
+{% endblock %}
+
+{% block javascripts_footer %}
+    {{ parent() }}
+
+{% endblock %}
