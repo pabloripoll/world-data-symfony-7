@@ -30,3 +30,4 @@ dist-ssr
 /vault
 /migrations/temp
 /resources/docs/symfony
+infrastructure/mysql/docker/data
